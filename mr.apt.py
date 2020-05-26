@@ -30,8 +30,8 @@ print('''\033[32m
 	|19: Perl           |24: net-tools     |29: setoolkit
 	|20: netcat         |25: bettercap     |30: kazam
 
-	|31: OpenShot       |36: Code Blocks   |
-	|32: ffmpeg & adb   |37: SQLiv Scanner |
+	|31: OpenShot       |36: Code Blocks
+	|32: ffmpeg & adb
 	|33: sqlmap
 	|34: fluxion
 	|35: Proxy Jondonym
@@ -190,7 +190,7 @@ while num != 0:
 			os.system("apt-get -y install gem")
 
 			print("\n[OK]apt-get update..")
-			os.system("apt-get update")
+			os.system("apt update")
 
 			print("\n[OK]Instalando bettercap..")
 			os.system("gem install bettercap")
@@ -202,7 +202,7 @@ while num != 0:
 			os.system("apt-get -y install python-dev python-setuptools libpcap0.8-dev libnetfilter-queue-dev libssl-dev libjpeg-dev libxml2-dev libxslt1-dev libcapstone3 libcapstone-dev libffi-dev file")
 			os.chdir("MITMf")
 			os.system("git submodule init && git submodule update --recursive")
-			os.system("apt-get install python-pip")
+			os.system("apt-get -y install python-pip")
 			os.system("pip install -r requirements.txt")
 			print("\n[OK]Concluido...")
 
@@ -229,12 +229,11 @@ while num != 0:
 			print("\n[OK]Baixando e instalando dependências...")
 			os.system("apt-get -y install wget")
 			os.system("wget http://ftp.us.debian.org/debian/pool/main/p/python-crypto/python-crypto_2.6.1-7_amd64.deb")
+			os.system("apt-get -y install python-ptyprocess")
+			os.system("pip install pexpect")
+			os.system("source /etc/profile")
 			os.system("dpkg -i python-crypto_2.6.1-7_amd64.deb")
-			os.system("apt-get -y install python-ptyprocess")
-			os.system("wget http://ftp.us.debian.org/debian/pool/main/p/pexpect/python-pexpect_4.2.1-1_all.deb")
-			os.system("apt-get -y install python-ptyprocess")
-			os.system("dpkg -i python-pexpect_4.2.1-1_all.deb")
-			os.system("rm -r python-crypto_2.6.1-7_amd64.deb python-pexpect_4.2.1-1_all.deb")
+			os.system("rm -r python-crypto_2.6.1-7_amd64.deb")
 			print("\n[OK]Concluido")
 
 	if num =='30':
@@ -269,6 +268,7 @@ while num != 0:
 			os.system("wget https://jondobrowser.jondos.de/other_downloads/jondo_all.deb")
 			print("\n[OK]Instalando Proxy Jondonym...")
 			os.system("apt-get -y install java-wrappers")
+			os.system("source /etc/profile")
 			os.system("dpkg -i jondo_all.deb")
 			os.system("rm -r jondo_all.deb")
 			print("\n[OK]Concluido...")
@@ -276,19 +276,6 @@ while num != 0:
 	if num =='36':
 			print("\n[OK]Baixando Code Blocks...")
 			os.system("apt-get -y install codeblocks")
-			print("\n[OK]Concluido...")
-
-	if num =='37':
-			print("\n[OK]Baixando SQLiv (Massive SQL injection scanner)...")
-			os.system("git clone https://github.com/the-robot/sqliv.git")
-			os.system("chmod 777 sqliv")
-			os.system("pip install bs4")
-			os.system("pip install termcolor")
-			os.system("pip install google")
-			os.system("pip install nyawc")
-			os.chdir("sqliv")
-			os.system("chmod 777 setup.py")
-			os.system("python2 setup.py -i")
 			print("\n[OK]Concluido...")
 
 	print('''\033[36m
@@ -314,8 +301,8 @@ Escolha as ferramentas a serem instaladas de acordo com as numerações:\033[0;0
 	|19: Perl           |24: net-tools     |29: setoolkit
 	|20: netcat         |25: bettercap     |30: kazam
 
-	|31: OpenShot       |36: Code Blocks   |
-	|32: ffmpeg & adb   |37: SQLiv Scanner |
+	|31: OpenShot       |36: Code Blocks
+	|32: ffmpeg & adb
 	|33: sqlmap
 	|34: fluxion
 	|35: Proxy Jondonym
