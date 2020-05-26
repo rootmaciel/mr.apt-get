@@ -16,24 +16,25 @@ print('''\033[35m
 #Linux, #Debian, #hacking,
 Script para debian via apt-get install
 Escolha as ferramentas a serem instaladas de acordo com as numerações:\033[0;0m''')
+
 print('''\033[32m
 	|1: make install    |6: vim            |11: ettercap
 	|2: git clone       |7: python idle    |12: sslstrip
 	|3: figlet          |8: qbitorrent     |13: dsniff  
 	|4: codec vlc       |9: nmap           |14: drifnet 
-	|5: leafpad         |10: wireshark     |15: hascat  
+	|5: cmatrix         |10: wireshark     |15: hascat  
 
-	|16: aircrack-ng    |21: siege         |26: mysql
+	|16: aircrack-ng    |21: siege         |26: mitmf
 	|17: reaver         |22: fcrackzip     |27: wget
 	|18: crunch         |23: slowhttptest  |28: metasploit
 	|19: Perl           |24: net-tools     |29: setoolkit
 	|20: netcat         |25: bettercap     |30: kazam
 
-	|31: OpenShot       |36: Proxy Jondonym|
-	|32: ffmpeg & adb   |37: Code Blocks   |
-	|33: sqlmap         |38: SQLiv Scanner |
-	|34: fluxion        |39: Weevely3
-	|35: Veil-Evasion
+	|31: OpenShot       |36: Code Blocks   |
+	|32: ffmpeg & adb   |37: SQLiv Scanner |
+	|33: sqlmap
+	|34: fluxion
+	|35: Proxy Jondonym
 \033[0;0m''')
 
 num = input("\033[37mEscolha um numero (0/Exit): \033[0;0m")
@@ -63,8 +64,8 @@ while num != 0:
 			print("\n[OK]Concluido...")
 
 	if num =='5':
-			print("\n[OK]Instalando editor de texto leafpad...")
-			os.system("apt-get -y install leafpad")
+			print("\n[OK]Instalando Terminal Matrix...")
+			os.system("apt-get -y install cmatrix")
 			print("\n[OK]Concluido...")
 
 	if num =='6':
@@ -75,6 +76,7 @@ while num != 0:
 	if num =='7':
 			print("\n[OK]Instalando interface grafica do pyton idle...")
 			os.system("apt-get -y install idle3")
+			os.system("apt-get -y install python-pip")
 			print("\n[OK]Concluido...")
 
 	if num =='8':
@@ -195,8 +197,13 @@ while num != 0:
 			print("\n[OK]Concluido...")
 
 	if num =='26':
-			print("\n[OK]Instalando mysql...")
-			os.system("apt-get -y install mysql-server")
+			print("\n[OK]Instalando mitmf...")
+			os.system("git clone https://github.com/byt3bl33d3r/MITMf.git")
+			os.system("apt-get -y install python-dev python-setuptools libpcap0.8-dev libnetfilter-queue-dev libssl-dev libjpeg-dev libxml2-dev libxslt1-dev libcapstone3 libcapstone-dev libffi-dev file")
+			os.chdir("MITMf")
+			os.system("git submodule init && git submodule update --recursive")
+			os.system("apt-get install python-pip")
+			os.system("pip install -r requirements.txt")
 			print("\n[OK]Concluido...")
 
 	if num =='27':
@@ -225,6 +232,7 @@ while num != 0:
 			os.system("dpkg -i python-crypto_2.6.1-7_amd64.deb")
 			os.system("apt-get -y install python-ptyprocess")
 			os.system("wget http://ftp.us.debian.org/debian/pool/main/p/pexpect/python-pexpect_4.2.1-1_all.deb")
+			os.system("apt-get -y install python-ptyprocess")
 			os.system("dpkg -i python-pexpect_4.2.1-1_all.deb")
 			os.system("rm -r python-crypto_2.6.1-7_amd64.deb python-pexpect_4.2.1-1_all.deb")
 			print("\n[OK]Concluido")
@@ -257,17 +265,6 @@ while num != 0:
 			print("\n[OK]Concluido...")
 
 	if num =='35':
-			print("\n[OK]Baixando Veil-Evasion...")
-			os.system("git clone https://github.com/Veil-Framework/Veil-Evasion.git")
-			os.system("chmod 777 Veil-Evasion")
-			os.chdir ("Veil-Evasion")
-			os.chdir ("setup")
-			os.system("chmod 777 setup.sh")
-			print("\n[OK]Instalando Veil-Evasion...")
-			os.system("./setup.sh")
-			print("\n[OK]Concluido...")
-
-	if num =='36':
 			print("\n[OK]Baixando Proxy Jondonym...")
 			os.system("wget https://jondobrowser.jondos.de/other_downloads/jondo_all.deb")
 			print("\n[OK]Instalando Proxy Jondonym...")
@@ -276,12 +273,12 @@ while num != 0:
 			os.system("rm -r jondo_all.deb")
 			print("\n[OK]Concluido...")
 
-	if num =='37':
+	if num =='36':
 			print("\n[OK]Baixando Code Blocks...")
 			os.system("apt-get -y install codeblocks")
 			print("\n[OK]Concluido...")
 
-	if num =='38':
+	if num =='37':
 			print("\n[OK]Baixando SQLiv (Massive SQL injection scanner)...")
 			os.system("git clone https://github.com/the-robot/sqliv.git")
 			os.system("chmod 777 sqliv")
@@ -293,19 +290,6 @@ while num != 0:
 			os.system("chmod 777 setup.py")
 			os.system("python2 setup.py -i")
 			print("\n[OK]Concluido...")
-
-	if num =='38':
-			print("\n[OK]Baixando Weevely...")
-			os.system("pip install prettytable")
-			os.system("pip install mako")
-			os.system("pip install pyyaml")
-			os.system("pip install python-dateutil")
-			os.system("pip install pysocks")
-			os.system("pip install readline")
-			os.system("pip install pyopenssl")
-			os.system("git clone https://github.com/epinna/weevely3.git")
-			os.system("chmod 777 weevely3")
-			print("[OK]Concluido...")
 
 	print('''\033[36m
 _______________________________________________________
@@ -322,19 +306,19 @@ Escolha as ferramentas a serem instaladas de acordo com as numerações:\033[0;0
 	|2: git clone       |7: python idle    |12: sslstrip
 	|3: figlet          |8: qbitorrent     |13: dsniff  
 	|4: codec vlc       |9: nmap           |14: drifnet 
-	|5: leafpad         |10: wireshark     |15: hascat  
+	|5: cmatrix         |10: wireshark     |15: hascat  
 
-	|16: aircrack-ng    |21: siege         |26: mysql
+	|16: aircrack-ng    |21: siege         |26: mitmf
 	|17: reaver         |22: fcrackzip     |27: wget
 	|18: crunch         |23: slowhttptest  |28: metasploit
 	|19: Perl           |24: net-tools     |29: setoolkit
 	|20: netcat         |25: bettercap     |30: kazam
 
-	|31: OpenShot       |36: Proxy Jondonym|
-	|32: ffmpeg & adb   |37: Code Blocks   |
-	|33: sqlmap         |38: SQLiv Scanner |
-	|34: fluxion        |39: Weevely3
-	|35: Veil-Evasion
+	|31: OpenShot       |36: Code Blocks   |
+	|32: ffmpeg & adb   |37: SQLiv Scanner |
+	|33: sqlmap
+	|34: fluxion
+	|35: Proxy Jondonym
 \033[0;0m''')
 	
 	num = input("\033[37mEscolha um numero 0/Exit):\033[0;0m")
