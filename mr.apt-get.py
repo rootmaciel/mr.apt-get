@@ -234,6 +234,7 @@ while num != 0:
 			os.system("source /etc/profile")
 			os.system("dpkg -i python-crypto_2.6.1-7_amd64.deb")
 			os.system("rm -r python-crypto_2.6.1-7_amd64.deb")
+			os.system("apt-get upgrade")
 			print("\n[OK]Concluido")
 
 	if num =='30':
@@ -271,6 +272,7 @@ while num != 0:
 			os.system("source /etc/profile")
 			os.system("dpkg -i jondo_all.deb")
 			os.system("rm -r jondo_all.deb")
+			os.system("apt-get upgrade")
 			print("\n[OK]Concluido...")
 
 	if num =='36':
