@@ -34,7 +34,7 @@ print('''\033[32m
 	|32: ffmpeg & adb
 	|33: sqlmap
 	|34: fluxion
-	|35: Proxy Jondonym
+	|35: okadminfinder
 \033[0;0m''')
 
 num = input("\033[37mEscolha um numero (0/Exit): \033[0;0m")
@@ -224,17 +224,11 @@ while num != 0:
 	if num =='29':
 			print("\n[OK]Baixando setoolkit...")
 			os.system("git clone https://github.com/trustedsec/social-engineer-toolkit/ set/")
-			os.system("chmod 777 set")
-			os.chdir("set")
+			os.system("chmod 777 -R set")
 			print("\n[OK]Baixando e instalando dependências...")
-			os.system("apt-get -y install wget")
-			os.system("wget http://ftp.us.debian.org/debian/pool/main/p/python-crypto/python-crypto_2.6.1-7_amd64.deb")
+			os.system("apt -y install python-pip")
 			os.system("apt-get -y install python-ptyprocess")
 			os.system("pip install pexpect")
-			os.system("source /etc/profile")
-			os.system("dpkg -i python-crypto_2.6.1-7_amd64.deb")
-			os.system("rm -r python-crypto_2.6.1-7_amd64.deb")
-			os.system("apt-get upgrade")
 			print("\n[OK]Concluido")
 
 	if num =='30':
@@ -265,14 +259,15 @@ while num != 0:
 			print("\n[OK]Concluido...")
 
 	if num =='35':
-			print("\n[OK]Baixando Proxy Jondonym...")
-			os.system("wget https://jondobrowser.jondos.de/other_downloads/jondo_all.deb")
-			print("\n[OK]Instalando Proxy Jondonym...")
-			os.system("apt-get -y install java-wrappers")
-			os.system("source /etc/profile")
-			os.system("dpkg -i jondo_all.deb")
-			os.system("rm -r jondo_all.deb")
-			os.system("apt-get upgrade")
+			print("\n[OK]Instalando OkAdminFinder...")
+			os.system("git clone https://github.com/mIcHyAmRaNe/okadminfinder3.git")
+			os.system("chmod 777 -R okadminfinder3")
+			os.chdir("okadminfinder3")
+			os.system("apt-get -y install tor")
+			os.system("apt-get -y install python3-socks")
+			os.system("apt-get -y install python-pip")
+			os.system("apt-get -y install python3-pip")
+			os.system("pip3 install --user -r requirements.txt")
 			print("\n[OK]Concluido...")
 
 	if num =='36':
@@ -307,7 +302,7 @@ Escolha as ferramentas a serem instaladas de acordo com as numerações:\033[0;0
 	|32: ffmpeg & adb
 	|33: sqlmap
 	|34: fluxion
-	|35: Proxy Jondonym
+	|35: okadminfinder
 \033[0;0m''')
 	
 	num = input("\033[37mEscolha um numero 0/Exit):\033[0;0m")
