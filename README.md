@@ -1,6 +1,7 @@
 #mr.apt-get
 
-Script para instalçao de ferramentas hacking, no debian via terminal apt-get install
+Script para instalação de ferramentas hacking, no Debian, Ubuntu e em
+outras distros via terminal apt install
 
 Use:
 apt update && upgrade
