@@ -1,22 +1,18 @@
 #usr/bin/python3
 
 import os
-
-#Mostrar Informações do Sistema Linux
-print()
-os.system("cat /etc/*-release")
-os.system("uname -a")
-
 print('''\033[36m
 _______________________________________________________
-[]Versao 1.0-------Mr.Apt-Get_Install-------PenTester[]
+[]Versao 1.1-------Mr.Apt-Get_Install-------PenTester[]
 []                                                   []
-[]------------------Debian - Hacking-----------------[]
+[]------Debian------Diego - Maciel------Hacking------[]
 []___________________________________________________[]\033[0;0m''')
 print('''\033[35m
-#Linux, #Debian, #hacking,
+#Linux, #Debian, #Hacking,
 Script para debian via apt-get install
 Escolha as ferramentas a serem instaladas de acordo com as numerações:\033[0;0m''')
+
+print("\nPara uma Instalação Recomenda Numero(99)")
 
 print('''\033[32m
     |1: make install    |6: vim            |11: ettercap
@@ -32,10 +28,10 @@ print('''\033[32m
     |20: netcat         |25: bettercap     |30: kazam
 
     |31: OpenShot       |36: Code Blocks
-    |32: ffmpeg & adb
-    |33: sqlmap
-    |34: fluxion
-    |35: okadminfinder
+    |32: ffmpeg & adb   |37: binwalk
+    |33: sqlmap         |38: PyJupyter
+    |34: fluxion        |39: Xprobe2
+    |35: okadminfinder  |40: wpscan
 \033[0;0m''')
 
 num = input("\033[37mEscolha um numero (0/Exit): \033[0;0m")
@@ -43,11 +39,21 @@ num = input("\033[37mEscolha um numero (0/Exit): \033[0;0m")
 while num != 0:
 
     if num == '0':
+        print("Thanks u")
         os.system(exit())
-    
+
+    if num == '99':
+        num1 = input("Instalação Recomendada não inclui ferramentas como metasploit, setoolkit, entre outras, Deseja Continuar? Enter ou (0/Exit): ")
+        if num1 == '0':
+            print("Thanks u")
+            os.system(exit())
+        
+        os.system("apt install -y make git figlet vlc cmatrix vim idle3 python-pip python3-pip nmap qbittorrent wireshark ettercap-graphical sslstrip dsniff driftnet aircrack-ng libclc-dev libclc-r600 mesa-opencl-icd ocl-icd-libopencl1 hashcat aircrack-ng reaver crunch perl netcat siege fcrackzip slowhttptest net-tools wget kazam openshot ffmpeg adb codeblocks binwalk")
+
     if num == '1':
         print("\n[OK]Instalando make install...")
         os.system("apt-get -y install make")
+        print("\n[OK]Concluido...")
 
     if num == '2':
         print("\n[OK]Instalando git clone...")
@@ -78,6 +84,7 @@ while num != 0:
         print("\n[OK]Instalando interface grafica do pyton idle...")
         os.system("apt-get -y install idle3")
         os.system("apt-get -y install python-pip")
+        os.system("apt-get -y install python3-pip")
         print("\n[OK]Concluido...")
 
     if num =='8':
@@ -200,6 +207,7 @@ while num != 0:
     if num =='26':
         print("\n[OK]Instalando mitmf...")
         os.system("git clone https://github.com/byt3bl33d3r/MITMf.git")
+        os.system("chmod 777 -R MITMf")
         os.system("apt-get -y install python-dev python-setuptools libpcap0.8-dev libnetfilter-queue-dev libssl-dev libjpeg-dev libxml2-dev libxslt1-dev libcapstone3 libcapstone-dev libffi-dev file")
         os.chdir("MITMf")
         os.system("git submodule init && git submodule update --recursive")
@@ -224,12 +232,12 @@ while num != 0:
 
     if num =='29':
         print("\n[OK]Baixando setoolkit...")
-        os.system("git clone https://github.com/trustedsec/social-engineer-toolkit/ set/")
-        os.system("chmod 777 -R set")
         print("\n[OK]Baixando e instalando dependências...")
         os.system("apt -y install python-pip")
         os.system("apt-get -y install python-ptyprocess")
         os.system("pip install pexpect")
+        os.system("git clone https://github.com/trustedsec/social-engineer-toolkit.git")
+        os.system("chmod 777 -R social-engineer-toolkit")
         print("\n[OK]Concluido")
 
     if num =='30':
@@ -251,12 +259,13 @@ while num != 0:
     if num =='33':
         print("\n[OK]Instalando sqlmap...")
         os.system("git clone https://github.com/sqlmapproject/sqlmap.git")
-        os.system("chmod 777 sqlmap")
+        os.system("chmod 777 -R sqlmap")
         print("\n[OK]Concluido...")
 
     if num =='34':
         print("\n[OK]Instalando fluxion...")
         os.system("git clone https://github.com/wi-fi-analyzer/fluxion.git")
+        os.system("chmod 777 -R fluxion")
         print("\n[OK]Concluido...")
 
     if num =='35':
@@ -276,20 +285,49 @@ while num != 0:
         os.system("apt-get -y install codeblocks")
         print("\n[OK]Concluido...")
 
+    if num =='37':
+        print("\n[OK]Baixando Binwalk...")
+        os.system("apt-get -y install binwalk")
+        print("\n[OK]Concluido...")
+
+    if num =='38':
+        print("\n[OK]Baixando PyJupyter...")
+        os.system("apt-get -y install python3")
+        os.system("python3 -m pip install --upgrade pip")
+        os.system("pip3 install Jupyter")
+        os.system("pip3 install pyautogui")
+        os.system("pip3 install pyperclip")
+        print("\n[OK]Concluido...")
+        print("\nOBS: No Error = P/ Iniciar: pyjupyter notebook")
+
+    if num =='39':
+        print("\n[OK]Baixando Xprobe2...")
+        os.system("apt-get -y install xprobe2")
+        print("\n[OK]Concluido...")
+
+    if num =='40':
+        print("\n[OK]Baixando wpscan...")
+        os.system("apt update && sudo apt upgrade -y")
+        os.system("apt install curl git libcurl4-openssl-dev make zlib1g-dev gawk g++ gcc libreadline6-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 autoconf libgdbm-dev libncurses5-dev automake libtool bison pkg-config ruby ruby-bundler ruby-dev")
+        os.system("gem install wpscan")
+        print("\n[OK]Concluido...")
     print('''\033[36m
 _______________________________________________________
 []Versao 1.0-------Mr.Apt-Get_Install-------PenTester[]
 []                                                   []
-[]------------------Debian - Hacking-----------------[]
+[]------Debian------Diego - Maciel------Hacking------[]
 []___________________________________________________[]\033[0;0m''')
     print('''\033[35m
-#Linux, #Debian, #hacking,
+#Linux, #Debian, #Hacking,
 Script para debian via apt-get install
 Escolha as ferramentas a serem instaladas de acordo com as numerações:\033[0;0m''')
+
+    print("\nPara uma Instalação Recomenda Numero(99)")
+
     print(''' \033[32m
     |1: make install    |6: vim            |11: ettercap
     |2: git clone       |7: python idle    |12: sslstrip
-    |3: figlet          |8: qbitorrent     |13: dsniff  
+    |3: figlet          |8: qbitorrent     |13: dsniff
     |4: codec vlc       |9: nmap           |14: drifnet 
     |5: cmatrix         |10: wireshark     |15: hascat  
 
@@ -300,11 +338,10 @@ Escolha as ferramentas a serem instaladas de acordo com as numerações:\033[0;0
     |20: netcat         |25: bettercap     |30: kazam
 
     |31: OpenShot       |36: Code Blocks
-    |32: ffmpeg & adb
-    |33: sqlmap
-    |34: fluxion
-    |35: okadminfinder
+    |32: ffmpeg & adb   |37: binwalk
+    |33: sqlmap         |38: PyJupyter
+    |34: fluxion        |39: Xprobe2
+    |35: okadminfinder  |40: wpscan
 \033[0;0m''')
-    
-    num = input("\033[37mEscolha um numero 0/Exit):\033[0;0m")
 
+    num = input("\033[37mEscolha um numero (0/Exit):\033[0;0m")
