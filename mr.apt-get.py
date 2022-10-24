@@ -1,16 +1,17 @@
 #usr/bin/python3
 
 import os
+
 print('''\033[36m
-_______________________________________________________
-[]Versao 1.1-------Mr.Apt-Get_Install-------PenTester[]
-[]                                                   []
-[]------Debian------Diego - Maciel------Hacking------[]
-[]___________________________________________________[]\033[0;0m''')
+    _______________________________________________________
+    []Versao 1.1-------Mr.Apt-Get_Install-------PenTester[]
+    []                                                   []
+    []------Debian------Diego - Maciel------Hacking------[]
+    []___________________________________________________[]\033[0;0m''')
 print('''\033[35m
-#Linux, #Debian, #Hacking,
-Script para debian via apt-get install
-Escolha as ferramentas a serem instaladas de acordo com as numerações:\033[0;0m''')
+    #Linux, #Debian, #Hacking,
+    Script para debian via apt-get install
+    Escolha as ferramentas a serem instaladas de acordo com as numerações:\033[0;0m''')
 
 print("\nPara uma Instalação Recomenda Numero(99)")
 
@@ -27,8 +28,8 @@ print('''\033[32m
     |19: Perl           |24: net-tools     |29: setoolkit
     |20: netcat         |25: bettercap     |30: kazam
 
-    |31: OpenShot       |36: Code Blocks
-    |32: ffmpeg & adb   |37: binwalk
+    |31: OpenShot       |36: Code Blocks   |41: ltrace
+    |32: ffmpeg & adb   |37: binwalk       |42: searchsploit
     |33: sqlmap         |38: PyJupyter
     |34: fluxion        |39: Xprobe2
     |35: okadminfinder  |40: wpscan
@@ -48,7 +49,7 @@ while num != 0:
             print("Thanks u")
             os.system(exit())
         
-        os.system("apt install -y make git figlet vlc cmatrix vim idle3 python-pip python3-pip nmap qbittorrent wireshark ettercap-graphical sslstrip dsniff driftnet aircrack-ng libclc-dev libclc-r600 mesa-opencl-icd ocl-icd-libopencl1 hashcat aircrack-ng reaver crunch perl netcat siege fcrackzip slowhttptest net-tools wget kazam openshot ffmpeg adb codeblocks binwalk")
+        os.system("apt install -y make git figlet vlc cmatrix vim idle3 python-pip python3-pip nmap qbittorrent wireshark ettercap-graphical sslstrip dsniff driftnet aircrack-ng libclc-dev libclc-r600 mesa-opencl-icd ocl-icd-libopencl1 hashcat aircrack-ng reaver crunch perl netcat siege fcrackzip slowhttptest net-tools wget kazam openshot ffmpeg adb codeblocks binwalk dnsrecon ltrace")
 
     if num == '1':
         print("\n[OK]Instalando make install...")
@@ -311,16 +312,36 @@ while num != 0:
         os.system("apt install curl git libcurl4-openssl-dev make zlib1g-dev gawk g++ gcc libreadline6-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 autoconf libgdbm-dev libncurses5-dev automake libtool bison pkg-config ruby ruby-bundler ruby-dev")
         os.system("gem install wpscan")
         print("\n[OK]Concluido...")
+
+    if num =='41':
+        print("\n[OK]Instalando ltrace...")
+        os.system("apt-get install ltrace")
+        print("\n[OK]Concluido...")
+
+    if num =='42':
+        print("\n[OK]Instalando searchsploit...")
+        os.system("apt-get install snap")
+        os.system("apt-get install snapd")
+        os.system("snap install core")
+        os.system("snap install searchsploit")
+        os.system("clone https://github.com/offensive-security/exploitdb.git")
+        print("\n[OK]Concluido...")
+
+    if num =='43':
+        print("\n[OK]Instalando dnsrecon...")
+        os.system("apt-get install dnsrecon")
+        print("\n[OK]Concluido..")
+
     print('''\033[36m
-_______________________________________________________
-[]Versao 1.0-------Mr.Apt-Get_Install-------PenTester[]
-[]                                                   []
-[]------Debian------Diego - Maciel------Hacking------[]
-[]___________________________________________________[]\033[0;0m''')
+    _______________________________________________________
+    []Versao 1.1-------Mr.Apt-Get_Install-------PenTester[]
+    []                                                   []
+    []------Debian------Diego - Maciel------Hacking------[]
+    []___________________________________________________[]\033[0;0m''')
     print('''\033[35m
-#Linux, #Debian, #Hacking,
-Script para debian via apt-get install
-Escolha as ferramentas a serem instaladas de acordo com as numerações:\033[0;0m''')
+    #Linux, #Debian, #Hacking,
+    Script para debian via apt-get install
+    Escolha as ferramentas a serem instaladas de acordo com as numerações:\033[0;0m''')
 
     print("\nPara uma Instalação Recomenda Numero(99)")
 
@@ -328,7 +349,7 @@ Escolha as ferramentas a serem instaladas de acordo com as numerações:\033[0;0
     |1: make install    |6: vim            |11: ettercap
     |2: git clone       |7: python idle    |12: sslstrip
     |3: figlet          |8: qbitorrent     |13: dsniff
-    |4: codec vlc       |9: nmap           |14: drifnet 
+    |4: codec vlc       |9: nmap           |14: drifnet
     |5: cmatrix         |10: wireshark     |15: hascat  
 
     |16: aircrack-ng    |21: siege         |26: mitmf
@@ -337,11 +358,11 @@ Escolha as ferramentas a serem instaladas de acordo com as numerações:\033[0;0
     |19: Perl           |24: net-tools     |29: setoolkit
     |20: netcat         |25: bettercap     |30: kazam
 
-    |31: OpenShot       |36: Code Blocks
-    |32: ffmpeg & adb   |37: binwalk
-    |33: sqlmap         |38: PyJupyter
+    |31: OpenShot       |36: Code Blocks   |41: ltrace
+    |32: ffmpeg & adb   |37: binwalk       |42: searchsploit
+    |33: sqlmap         |38: PyJupyter     |43: dnsrecon
     |34: fluxion        |39: Xprobe2
     |35: okadminfinder  |40: wpscan
-\033[0;0m''')
+    \033[0;0m''')
 
     num = input("\033[37mEscolha um numero (0/Exit):\033[0;0m")
