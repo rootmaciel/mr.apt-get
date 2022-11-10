@@ -32,7 +32,7 @@ print('''\033[32m
     |32: ffmpeg & adb   |37: binwalk       |42: searchsploit
     |33: sqlmap         |38: PyJupyter     |43: dnsrecon
     |34: fluxion        |39: Xprobe2       |44: dirb
-    |35: okadminfinder  |40: wpscan
+    |35: okadminfinder  |40: wpscan        |45: Storm-Breaker
 \033[0;0m''')
 
 num = input("\033[37mEscolha um numero (0/Exit): \033[0;0m")
@@ -336,7 +336,15 @@ while num != 0:
         print("\n[OK]Instalando dirb...")
         os.system("apt-get install dirb")
         print("\n[OK]Concluido..")
-
+        
+    if num =='45':
+        print("\n[OK]Instalando Storm-Breaker...")
+        os.system("git clone https://github.com/ultrasecurity/Storm-Breaker.git")
+        os.system("cd Storm-Breaker")
+        os.system("bash install.sh")
+        os.system("python3 -m pip install -r requirements.txt")
+        print("\n[OK]Concluido..")
+        
     print('''\033[36m
     _______________________________________________________
     []Versao 1.1-------Mr.Apt-Get_Install-------PenTester[]
@@ -367,7 +375,7 @@ while num != 0:
     |32: ffmpeg & adb   |37: binwalk       |42: searchsploit
     |33: sqlmap         |38: PyJupyter     |43: dnsrecon
     |34: fluxion        |39: Xprobe2       |44: dirb
-    |35: okadminfinder  |40: wpscan
+    |35: okadminfinder  |40: wpscan        |45: Storm-Breaker
     \033[0;0m''')
 
     num = input("\033[37mEscolha um numero (0/Exit):\033[0;0m")
