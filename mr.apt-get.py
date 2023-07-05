@@ -33,6 +33,8 @@ print('''\033[32m
     |33: sqlmap         |38: PyJupyter     |43: dnsrecon
     |34: fluxion        |39: Xprobe2       |44: dirb
     |35: okadminfinder  |40: wpscan        |45: Storm-Breaker
+
+    |46: Parcellite
 \033[0;0m''')
 
 num = input("\033[37mEscolha um numero (0/Exit): \033[0;0m")
@@ -49,7 +51,7 @@ while num != 0:
             print("Thanks u")
             os.system(exit())
         
-        os.system("apt install -y make git figlet vlc cmatrix vim idle3 python-pip python3-pip nmap qbittorrent wireshark ettercap-graphical sslstrip dsniff driftnet aircrack-ng libclc-dev libclc-r600 mesa-opencl-icd ocl-icd-libopencl1 hashcat aircrack-ng reaver crunch perl netcat siege fcrackzip slowhttptest net-tools wget kazam openshot ffmpeg adb codeblocks binwalk dnsrecon ltrace dirb")
+        os.system("apt install -y make git figlet vlc cmatrix vim idle3 python-pip python3-pip nmap qbittorrent wireshark ettercap-graphical sslstrip dsniff driftnet aircrack-ng libclc-dev libclc-r600 mesa-opencl-icd ocl-icd-libopencl1 hashcat aircrack-ng reaver crunch perl netcat siege fcrackzip slowhttptest net-tools wget kazam openshot ffmpeg adb codeblocks binwalk dnsrecon ltrace dirb parcellite")
 
     if num == '1':
         print("\n[OK]Instalando make install...")
@@ -344,6 +346,11 @@ while num != 0:
         os.system("bash install.sh")
         os.system("python3 -m pip install -r requirements.txt")
         print("\n[OK]Concluido..")
+
+    if num =='46':
+    print("\n[OK]Instalando Area de Transferencia...")
+    os.system("apt-get install parcellite")
+    print("\n[OK]Concluido..")
         
     print('''\033[36m
     _______________________________________________________
@@ -376,6 +383,8 @@ while num != 0:
     |33: sqlmap         |38: PyJupyter     |43: dnsrecon
     |34: fluxion        |39: Xprobe2       |44: dirb
     |35: okadminfinder  |40: wpscan        |45: Storm-Breaker
+
+    |46: Parcellite
     \033[0;0m''')
 
     num = input("\033[37mEscolha um numero (0/Exit):\033[0;0m")
