@@ -34,7 +34,7 @@ print('''\033[32m
     |34: fluxion        |39: Xprobe2       |44: dirb
     |35: okadminfinder  |40: wpscan        |45: Storm-Breaker
 
-    |46: Parcellite     |47: Bluetooth
+    |46: Parcellite     |47: Bluetooth     |48: Zaproxy
 \033[0;0m''')
 
 num = input("\033[37mEscolha um numero (0/Exit): \033[0;0m")
@@ -355,7 +355,15 @@ while num != 0:
     if num =='47':
         print("\n[OK]Instalando Bluetooth...")
         os.system("apt-get install blueman")
-        print("\n[OK]Concluido..")    
+        print("\n[OK]Concluido..")
+
+    if num =='48':
+        print("\n[OK]Instalando ZAPROXY...")
+        os.system("echo 'deb http://download.opensuse.org/repositories/home:/cabelo/Debian_12/ /' | sudo tee /etc/apt/sources.list.d/home:cabelo.list")
+        os.system("curl -fsSL https://download.opensuse.org/repositories/home:cabelo/Debian_12/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_cabelo.gpg > /dev/null")
+        os.system("sudo apt update")
+        os.system("sudo apt install owasp-zap")
+        print("\n[OK]Concluido..")
         
     print('''\033[36m
     _______________________________________________________
@@ -389,7 +397,7 @@ while num != 0:
     |34: fluxion        |39: Xprobe2       |44: dirb
     |35: okadminfinder  |40: wpscan        |45: Storm-Breaker
 
-    |46: Parcellite     |47: Bluetooth
+    |46: Parcellite     |47: Bluetooth     |48: Zaproxy
     \033[0;0m''')
 
     num = input("\033[37mEscolha um numero (0/Exit):\033[0;0m")
