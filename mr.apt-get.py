@@ -1,7 +1,7 @@
 #usr/bin/python3
 
 import os
-
+os.system("neofetch")
 print('''\033[36m
     _______________________________________________________
     []Versao 1.1-------Mr.Apt-Get_Install-------PenTester[]
